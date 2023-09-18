@@ -7,5 +7,16 @@
 template <typename T>
 std::vector<T> findLargest(const std::vector<T>& v, int k)
 {
-    return std::vector<T>();
+    std::vector<T> largest;
+
+    for (auto i = v.begin(); i != v.end(); i++) {
+        largest.push_back(*i);
+        sort(largest.begin(), largest.end(), [](T &t1, T &t2){ return t1 > t2; });
+        if (largest.size() > k) {
+            largest.pop_back();
+        }
+    }
+
+    reverse(largest.begin(), largest.end());
+    return largest;
 }
