@@ -21,7 +21,7 @@ TEST_CASE("k-largest benchmarks")
         const int n = 5000;
         const int k = 100;
         vector<int> v(n, 0);
-        meter.measure([&v] {
+        meter.measure([&v,k] {
             return findLargest(v, k);
         });
     };
@@ -30,7 +30,7 @@ TEST_CASE("k-largest benchmarks")
         const int n = 10000;
         const int k = 100;
         vector<int> v(n, 0);
-        meter.measure([&v] {
+        meter.measure([&v,k] {
             return findLargest(v, k);
         });
     };
@@ -39,7 +39,7 @@ TEST_CASE("k-largest benchmarks")
         const int n = 15000;
         const int k = 100;
         vector<int> v(n, 0);
-        meter.measure([&v] {
+        meter.measure([&v,k] {
             return findLargest(v, k);
         });
     };
@@ -48,7 +48,7 @@ TEST_CASE("k-largest benchmarks")
         const int n = 20000;
         const int k = 100;
         vector<int> v(n, 0);
-        meter.measure([&v] {
+        meter.measure([&v,k] {
             return findLargest(v, k);
         });
     };
@@ -57,7 +57,7 @@ TEST_CASE("k-largest benchmarks")
         const int n = 25000;
         const int k = 100;
         vector<int> v(n, 0);
-        meter.measure([&v] {
+        meter.measure([&v,k] {
             return findLargest(v, k);
         });
     };
